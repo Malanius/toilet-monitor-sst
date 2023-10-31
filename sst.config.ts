@@ -1,4 +1,5 @@
-import { SSTConfig } from 'sst';
+import type { SSTConfig } from 'sst';
+
 import { API } from './stacks/MyStack';
 
 export default {
