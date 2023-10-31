@@ -4,15 +4,19 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prepare": "husky install",
     "dev": "sst dev",
     "build": "sst build",
     "deploy": "sst deploy",
     "remove": "sst remove",
     "console": "sst console",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "precommit": "lint-staged"
   },
   "devDependencies": {
     "@tsconfig/node18": "^18.2.2",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
     "aws-cdk-lib": "2.101.1",
     "constructs": "10.2.69",
     "eslint": "^8.52.0",
@@ -21,6 +25,8 @@
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.2",
     "prettier": "^3.0.3",
     "sst": "^2.32.2",
     "typescript": "^5.2.2"
