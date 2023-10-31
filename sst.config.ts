@@ -1,14 +1,14 @@
-import { SSTConfig } from "sst";
-import { API } from "./stacks/MyStack";
+import { SSTConfig } from 'sst';
+import { API } from './stacks/MyStack';
 
 export default {
   config(_input) {
     return {
-      name: "toilet-monitor-sst",
-      region: "us-east-1",
+      name: 'toilet-monitor-sst',
+      region: 'eu-west-1',
     };
   },
   stacks(app) {
     app.stack(API);
-  }
+  },
 } satisfies SSTConfig;
