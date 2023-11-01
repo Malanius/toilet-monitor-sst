@@ -1,15 +1,19 @@
 import type { SSTConfig } from 'sst';
 
-import { API } from './stacks/MyStack';
+import { ApiStack } from './stacks/Api';
 
 export default {
   config(_input) {
     return {
-      name: 'toilet-monitor-sst',
+      name: 'toilet-monitor',
       region: 'eu-west-1',
     };
   },
   stacks(app) {
-    app.stack(API);
+    if (app.stage !== 'prod') {
+      app.setDefaultRemovalPolicy('destroy');
+    }
+
+    app.stack(ApiStack);
   },
 } satisfies SSTConfig;
