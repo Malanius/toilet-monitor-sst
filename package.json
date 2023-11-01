@@ -13,13 +13,16 @@
     "typecheck": "tsc --noEmit",
     "precommit": "lint-staged"
   },
+  "dependencies": {
+    "sst": "^2.32.2",
+    "aws-cdk-lib": "2.101.1"
+  },
   "devDependencies": {
     "@commitlint/cli": "^18.2.0",
     "@commitlint/config-conventional": "^18.1.0",
     "@tsconfig/node18": "^18.2.2",
     "@typescript-eslint/eslint-plugin": "^6.9.1",
     "@typescript-eslint/parser": "^6.9.1",
-    "aws-cdk-lib": "2.101.1",
     "constructs": "10.2.69",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.52.0",
@@ -31,7 +34,6 @@
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
     "prettier": "^3.0.3",
-    "sst": "^2.32.2",
     "typescript": "^5.2.2"
   },
   "workspaces": [
