@@ -14,6 +14,12 @@ export default {
       app.setDefaultRemovalPolicy('destroy');
     }
 
+    app.setDefaultFunctionProps({
+      runtime: 'nodejs18.x',
+      architecture: 'arm_64',
+      logRetention: 'three_months',
+    });
+
     app.stack(ApiStack);
   },
 } satisfies SSTConfig;
