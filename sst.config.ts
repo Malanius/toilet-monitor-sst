@@ -1,6 +1,6 @@
 import type { SSTConfig } from 'sst';
 
-import { ApiStack } from './stacks/Api';
+import { ApiStack } from './stacks/Api.stack';
 
 export default {
   config(_input) {
