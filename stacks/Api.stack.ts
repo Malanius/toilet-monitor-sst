@@ -4,19 +4,6 @@ import { ApiGatewayV1Api, StackContext } from 'sst/constructs';
 
 export function ApiStack({ app, stack }: StackContext) {
   const api = new ApiGatewayV1Api(stack, 'Api', {
-    defaults: {
-      function: {
-        environment: {
-          APP_ENV: app.stage,
-          APP_NAME: app.name,
-          LOG_LEVEL: app.stage === 'prod' ? 'WARN' : 'DEBUG',
-          POWERTOOLS_LOGGER_LOG_EVENT: app.stage === 'prod' ? 'false' : 'true',
-          POWERTOOLS_PARAMETERS_MAX_AGE: Duration.minutes(5)
-            .toSeconds()
-            .toString(),
-        },
-      },
-    },
     cdk: {
       restApi: {
         defaultCorsPreflightOptions: {
