@@ -1,4 +1,3 @@
-import { Duration } from 'aws-cdk-lib';
 import { MethodLoggingLevel } from 'aws-cdk-lib/aws-apigateway';
 import { ApiGatewayV1Api, StackContext } from 'sst/constructs';
 

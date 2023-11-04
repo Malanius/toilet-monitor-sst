@@ -3,6 +3,7 @@ import { LambdaInsightsVersion } from 'aws-cdk-lib/aws-lambda';
 import type { SSTConfig } from 'sst';
 
 import { ApiStack } from './stacks/Api.stack';
+import { Database } from './stacks/Database.stack';
 
 export default {
   config(_input) {
@@ -34,6 +35,6 @@ export default {
       },
     });
 
-    app.stack(ApiStack);
+    app.stack(Database).stack(ApiStack);
   },
 } satisfies SSTConfig;
