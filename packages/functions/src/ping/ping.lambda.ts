@@ -9,8 +9,8 @@ const main: APIGatewayProxyHandler = async (event) => {
   const callingId = event.requestContext?.identity?.apiKeyId;
   logger.info(`Pinged from ${callingId}`);
   return {
-    statusCode: 204,
-    body: '',
+    statusCode: 200,
+    body: JSON.stringify({ message: `Hello device ${callingId}` }),
   };
 };
 
