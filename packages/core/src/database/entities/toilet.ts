@@ -45,5 +45,5 @@ export const Toilet = new Entity(
       },
     },
   },
-  { client: getDdbClient(), table: Table.AllTable.tableName }
+  { client: getDdbClient(), table: Table.SingleTable.tableName }
 );

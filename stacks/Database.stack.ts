@@ -2,7 +2,7 @@ import { RemovalPolicy } from 'aws-cdk-lib';
 import { StackContext, Table } from 'sst/constructs';
 
 export function Database({ stack }: StackContext) {
-  const table = new Table(stack, 'Table', {
+  const table = new Table(stack, 'SingleTable', {
     fields: {
       pk: 'string',
       sk: 'string',
