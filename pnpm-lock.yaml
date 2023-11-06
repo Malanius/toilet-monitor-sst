@@ -69,9 +69,6 @@ importers:
 
   packages/core:
     dependencies:
-      '@aws-sdk/client-api-gateway':
-        specifier: ^3.441.0
-        version: 3.441.0
       '@aws-sdk/client-dynamodb':
         specifier: ^3.441.0
         version: 3.441.0
@@ -106,6 +103,9 @@ importers:
       '@aws-lambda-powertools/tracer':
         specifier: ^1.14.1
         version: 1.14.1(@middy/core@4.6.5)
+      '@aws-sdk/client-api-gateway':
+        specifier: ^3.441.0
+        version: 3.441.0
       '@middy/core':
         specifier: ^4.6.5
         version: 4.6.5
@@ -127,6 +127,12 @@ importers:
       '@middy/validator':
         specifier: ^4.6.5
         version: 4.6.5
+      middy-zod-validator:
+        specifier: ^3.0.4
+        version: 3.0.4
+      zod:
+        specifier: ^3.22.4
+        version: 3.22.4
     devDependencies:
       '@types/aws-lambda':
         specifier: ^8.10.125
@@ -2867,6 +2873,11 @@ packages:
   /@lukeed/ms@2.0.1:
     resolution: {integrity: sha512-Xs/4RZltsAL7pkvaNStUQt7netTkyxrS0K+RILcVr3TRMS/ToOg4I6uNfhB9SlGsnWBym4U+EaXq0f0cEMNkHA==}
     engines: {node: '>=8'}
+
+  /@middy/core@2.5.7:
+    resolution: {integrity: sha512-KX5Ud0SP+pol6PGkYtMCH4goHobs1XJo3OvEUwdiZUIjZgo56Q08nLu5N7Bs6P+FwGTQHA+hlQ3I5SZbfpO/jg==}
+    engines: {node: '>=12'}
+    dev: false
 
   /@middy/core@4.6.5:
     resolution: {integrity: sha512-nsAmIcafn2GGHz7yOJecEZjQ0UVARC+Wem2wzGELolXKM2TskcyDcvwqDSlas4pwh7gzHTdfwP+pUmQVRGWJPQ==}
@@ -7054,6 +7065,14 @@ packages:
     dependencies:
       braces: 3.0.2
       picomatch: 2.3.1
+
+  /middy-zod-validator@3.0.4:
+    resolution: {integrity: sha512-WLPpsLPC40XorMIAOwp1lXE/6PULvgGVlHTp+yQV2wmncGxXdXBH+s6uiwUNDgel6ATU1N+Ptv+7b0Wj4Yl25g==}
+    dependencies:
+      '@middy/core': 2.5.7
+      http-errors: 2.0.0
+      zod: 3.22.4
+    dev: false
 
   /mime-db@1.52.0:
     resolution: {integrity: sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg==}
