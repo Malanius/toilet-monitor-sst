@@ -2,8 +2,8 @@ import { Duration } from 'aws-cdk-lib';
 import { LambdaInsightsVersion } from 'aws-cdk-lib/aws-lambda';
 import type { SSTConfig } from 'sst';
 
-import { ApiStack } from './stacks/Api.stack';
-import { Database } from './stacks/Database.stack';
+import { Api } from './stacks/Api.stack';
+import { Resources } from './stacks/Resources.stack';
 
 export default {
   config(_input) {
@@ -35,6 +35,6 @@ export default {
       },
     });
 
-    app.stack(Database).stack(ApiStack);
+    app.stack(Resources).stack(Api);
   },
 } satisfies SSTConfig;

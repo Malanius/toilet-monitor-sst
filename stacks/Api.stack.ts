@@ -1,7 +1,10 @@
 import { MethodLoggingLevel } from 'aws-cdk-lib/aws-apigateway';
-import { ApiGatewayV1Api, StackContext } from 'sst/constructs';
+import { ApiGatewayV1Api, StackContext, use } from 'sst/constructs';
 
-export function ApiStack({ app, stack }: StackContext) {
+import { Resources } from './Resources.stack';
+
+export function Api({ app, stack }: StackContext) {
+  const { usagePlan } = use(Resources);
   const api = new ApiGatewayV1Api(stack, 'Api', {
     cdk: {
       restApi: {
@@ -30,16 +33,8 @@ export function ApiStack({ app, stack }: StackContext) {
     },
   });
 
-  const plan = api.cdk.restApi.addUsagePlan('UsagePlan', {
-    description: 'Toilet Monitor usage plan',
-    apiStages: [
-      { api: api.cdk.restApi, stage: api.cdk.restApi.deploymentStage },
-    ],
-  });
-  plan.addApiKey(api.cdk.restApi.addApiKey('TestApiKey'));
-
-  stack.addOutputs({
-    ApiEndpoint: api.url,
+  usagePlan.addApiStage({
+    stage: api.cdk.restApi.deploymentStage,
   });
 
   // Return the API resource
