@@ -36,6 +36,6 @@ export default {
       },
     });
 
-    app.stack(Resources).stack(IoT).stack(Api);
+    app.stack(Resources).stack(IoT);
   },
 } satisfies SSTConfig;
