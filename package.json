@@ -16,6 +16,8 @@
   "dependencies": {
     "sst": "2.39.2",
     "aws-cdk-lib": "2.110.1",
+    "@aws-cdk/aws-iot-alpha": "2.110.1-alpha.0",
+    "@aws-cdk/aws-iot-actions-alpha": "2.110.1-alpha.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.2.0",

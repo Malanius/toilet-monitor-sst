@@ -3,6 +3,7 @@ import { LambdaInsightsVersion } from 'aws-cdk-lib/aws-lambda';
 import type { SSTConfig } from 'sst';
 
 import { Api } from './stacks/Api.stack';
+import { IoT } from './stacks/IoT.stack';
 import { Resources } from './stacks/Resources.stack';
 
 export default {
@@ -35,6 +36,6 @@ export default {
       },
     });
 
-    app.stack(Resources).stack(Api);
+    app.stack(Resources).stack(IoT).stack(Api);
   },
 } satisfies SSTConfig;
